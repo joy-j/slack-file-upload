@@ -4,13 +4,13 @@
   "description": "slack file upload",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jjoyraon/slack-file-upload"
+    "url": "https://github.com/joy-j/slack-file-upload"
   },
-  "main": "index.js",
+  "main": "src/slack-file-upload.js",
   "scripts": {
     "test": "mocha"
   },
-  "author": "jjoyraon",
+  "author": "Joy J",
   "license": "MIT",
   "dependencies": {
     "mocha": "^4.0.1",

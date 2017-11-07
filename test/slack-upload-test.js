@@ -7,11 +7,14 @@ describe('Slack', function() {
       const token = process.env.SLACK_TESTBOT_TOKEN;
 
       const fs = require('fs');
-      const filename = 'package.json';
 
       const slackFileUpload = require('../src/slack-file-upload');
 
-      slackFileUpload.upload(token, 'joy-private', filename);
+      slackFileUpload.upload({
+          token: token,
+          channels: 'joy-private',
+          filename: 'package.json'
+      });
    });
  });
 });

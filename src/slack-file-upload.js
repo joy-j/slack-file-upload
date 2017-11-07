@@ -3,20 +3,20 @@ const fs = require('fs');
 const uploadApiUrl = 'https://slack.com/api/files.upload';
 
 module.exports = {
-    upload : (token, channels, filename) => {
-        fileupload(token, channels, filename);
+    upload : (options) => {
+        fileupload(options);
     }
 }
 
-const fileupload = (token, channels, filename) => {
+const fileupload = (options) => {
 
-    const imageStream = fs.createReadStream(filename);
+    const imageStream = fs.createReadStream(options.filename);
 
     request.post({
       url: uploadApiUrl,
       formData: {
-        token: token,
-        channels: channels,
+        token: options.token,
+        channels: options.channels,
         file: imageStream
       }}, function(err, res, body){
         // console.log(res);
